@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>METRAS | Team Leader</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <script src="../js/team-leader.js" defer></script>
+</head>
+
+<body>
+  <!-- Top bar -->
+  <header class="topbar">
+  <div class="brand">
+    <a href="team-leader.html" class="logo-link">
+      <img src="../assets/logo.png" alt="METRAS Logo" class="logo-img">
+    </a>
+  </div>
+
+<nav class="topnav">
+  <a class="navlink" href="#">HOME</a>
+  <a class="navlink" href="#">TEAM</a>
+  <a class="navlink active" href="#">RISK ASSESSMENT</a>
+</nav>
+  </header>
+
+  <!-- Sub header -->
+  <section class="subbar">
+    <button class="icon-btn" id="btnMenu" aria-label="Open menu">
+      <span class="hamburger"></span>
+    </button>
+
+    <div class="projects" role="tablist" aria-label="Projects">
+      <button class="pill" data-project="Project 1" role="tab">Project 1</button>
+      <button class="pill pill-active" data-project="Project 2" role="tab" aria-selected="true">Project 2</button>
+      <button class="pill pill-add" id="btnAddProject" aria-label="Add project">+</button>
+    </div>
+  </section>
+
+  <main class="container">
+  <!-- Upload / Text input -->
+  <section class="card upload-card" id="inputSection">
+    <div class="section-head">
+      <h1 class="title">Risk Assessment</h1>
+      <p class="subtitle">Upload a requirements document or paste text, then analyze.</p>
+    </div>
+
+    <!-- stacked layout -->
+    <div class="one-bar">
+  <!-- Upload Document -->
+  <div class="bar-section">
+    <div class="pane-head">
+      <h2 class="pane-title">Upload Document</h2>
+      <p class="pane-sub">PDF / DOCX / TXT (front-end only for now)</p>
+    </div>
+
+    <label class="dropzone" for="reqFile" id="dropzone">
+      <div class="drop-icon" aria-hidden="true">⬆</div>
+      <div class="drop-text">
+        <div class="drop-title">Please provide Requirements Document</div>
+        <div class="drop-hint" id="fileHint">Drag & drop or click to select</div>
+      </div>
+      <input id="reqFile" type="file" accept=".pdf,.doc,.docx,.txt" hidden />
+    </label>
+
+    <div class="meta-row">
+      <div class="meta" id="fileMeta">No file selected</div>
+      <button class="link-btn" id="btnClearFile" type="button">Clear</button>
+    </div>
+  </div>
+
+  <div class="bar-divider"></div>
+
+  <!-- Paste Text -->
+  <div class="bar-section">
+    <div class="pane-head">
+      <h2 class="pane-title">Or Paste Requirements Text</h2>
+      <p class="pane-sub">Useful for quick testing or small specs</p>
+    </div>
+
+    <textarea
+      id="reqText"
+      class="textarea"
+      placeholder="Paste your requirements here…"
+      rows="8"
+    ></textarea>
+
+    <div class="meta-row">
+      <div class="meta" id="textMeta">0 characters</div>
+      <button class="link-btn" id="btnClearText" type="button">Clear</button>
+    </div>
+  </div>
+</div>
+
+    <div class="actions">
+      <button class="btn btn-secondary" id="btnUseSample" type="button">Use Sample Text</button>
+      <button class="btn btn-primary" id="btnAnalyze" type="button">Analyze</button>
+    </div>
+  </section>
+
+  <!-- Results Section (hidden until analyze) -->
+  <section class="card results-card" id="resultsSection" hidden>
+    <div class="results-head">
+      <h2 class="pane-title">Risk Assessment Results</h2>
+      <div class="loading" id="loading">
+        <span>Loading analysis</span>
+        <span class="spinner" aria-hidden="true"></span>
+      </div>
+    </div>
+
+    <div class="results-body" id="resultsBody">
+      <!-- table will be injected here -->
+    </div>
+  </section>
+</main>
+
+  <!-- simple drawer (placeholder) -->
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-head">
+      <div class="drawer-title">Menu</div>
+      <button class="icon-btn" id="btnCloseDrawer" aria-label="Close menu">✕</button>
+    </div>
+    <div class="drawer-body">
+      <a href="#" class="drawer-link">Projects</a>
+      <a href="#" class="drawer-link">Team</a>
+      <a href="#" class="drawer-link">Risk Assessment</a>
+      <a href="#" class="drawer-link">Settings</a>
+    </div>
+  </aside>
+
+  <div class="backdrop" id="backdrop" hidden></div>
+</body>
+</html>

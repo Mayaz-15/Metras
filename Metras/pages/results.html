@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>METRAS | Results</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <script src="../js/results.js" defer></script>
+</head>
+
+<body>
+  <!-- Top bar -->
+  <header class="topbar">
+    <div class="brand">
+      <a href="team-leader.html" class="logo-link">
+        <img src="../assets/logo.png" alt="METRAS Logo" class="logo-img">
+      </a>
+    </div>
+
+    <nav class="topnav">
+      <a class="navlink" href="#">HOME</a>
+      <a class="navlink" href="#">TEAM</a>
+      <a class="navlink active" href="#">RISK ASSESSMENT</a>
+    </nav>
+  </header>
+
+  <!-- Sub header (same as team-leader) -->
+  <section class="subbar">
+    <button class="icon-btn" id="btnMenu" aria-label="Open menu">
+      <span class="hamburger"></span>
+    </button>
+
+    <div class="projects" role="tablist" aria-label="Projects">
+      <button class="pill pill-active" type="button" aria-selected="true">Project 2</button>
+
+    </div>
+  </section>
+
+  <main class="container">
+    <section class="card results-card">
+      <!-- back row (not a button) -->
+    
+
+      <div class="results-head">
+        <h2 class="pane-title">Risk Assessment Results</h2>
+      </div>
+
+      <div class="results-body">
+        <div class="table-shell">
+          <div class="table-wrap">
+            <table class="table-dark" aria-label="Risk assessment results table">
+              <thead>
+                <tr>
+                  <th>Requirement</th>
+                  <th>Predicted Severity</th>
+                  <th>Predicted Impact</th>
+                  <th>Predicted Likelihood</th>
+                  <th>Top CVE</th>
+                  <th>Similarity</th>
+                  <th>CVE Description</th>
+                </tr>
+              </thead>
+              <tbody id="resultsTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="results-footer">
+    <a href="team-leader.html" class="back-link">
+      <span class="back-arrow">←</span>
+      <span>Risk Assessment</span>
+    </a>
+  </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Drawer (same component) -->
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-head">
+      <div class="drawer-title">Menu</div>
+      <button class="icon-btn" id="btnCloseDrawer" aria-label="Close menu">✕</button>
+    </div>
+    <div class="drawer-body">
+      <a href="team-leader.html" class="drawer-link">Risk Assessment</a>
+      <a href="#" class="drawer-link">Team</a>
+      <a href="#" class="drawer-link">Projects</a>
+      <a href="#" class="drawer-link">Settings</a>
+    </div>
+  </aside>
+
+  <div class="backdrop" id="backdrop" hidden></div>
+</body>
+</html>
