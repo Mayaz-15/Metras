@@ -1705,3 +1705,71 @@ select:focus{
   gap: 12px;
   margin-top: 24px;
 }
+.project-members{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 14px 0;
+  color: #c9c5d8;
+  font-size: 13px;
+}
+
+.member-chip{
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(159,122,234,0.14);
+  color: #c4a7ff;
+  border: 1px solid rgba(159,122,234,0.25);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.project-muted{
+  color: #8b8798;
+  font-size: 13px;
+}
+.member-input-row{
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.member-input-row .input{
+  flex: 1;
+}
+
+.members-list{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+  min-height: 34px;
+}
+
+.member-chip.removable{
+  gap: 8px;
+}
+
+.remove-member{
+  background: transparent;
+  border: none;
+  color: #c4a7ff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.remove-member:hover{
+  color: #ffffff;
+}
+
+@media (max-width: 768px){
+  .member-input-row{
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

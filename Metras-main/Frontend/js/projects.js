@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function loadProjects(projectsGrid) {
   if (!projectsGrid) return;
 
-  const projects = JSON.parse(localStorage.getItem("metras_projects")) || [];
+  const projects = getProjects();
 
   projectsGrid.innerHTML = "";
 
@@ -39,6 +39,17 @@ function loadProjects(projectsGrid) {
 
       <div class="project-desc">
         ${escapeHtml(project.description || "No description provided.")}
+      </div>
+
+      <div class="project-members">
+        <strong>Team Members:</strong>
+        ${
+          project.members && project.members.length > 0
+            ? project.members
+                .map((member) => `<span class="member-chip">${escapeHtml(member)}</span>`)
+                .join("")
+            : `<span class="project-muted">No members added</span>`
+        }
       </div>
 
       <div class="project-meta">
@@ -87,6 +98,17 @@ function openProjectPopup(project) {
         </div>
 
         <div class="popup-row">
+          <span class="popup-label">Team Members</span>
+          <span class="popup-value">
+            ${
+              project.members && project.members.length > 0
+                ? project.members.map((member) => escapeHtml(member)).join(", ")
+                : "No members added"
+            }
+          </span>
+        </div>
+
+        <div class="popup-row">
           <span class="popup-label">Status</span>
           <span class="popup-value">${escapeHtml(project.status || "Draft")}</span>
         </div>
@@ -131,6 +153,14 @@ function openProjectPopup(project) {
 function closeProjectPopup() {
   const popup = document.getElementById("projectPopup");
   if (popup) popup.remove();
+}
+
+function getProjects() {
+  try {
+    return JSON.parse(localStorage.getItem("metras_projects")) || [];
+  } catch {
+    return [];
+  }
 }
 
 function initDrawer() {
