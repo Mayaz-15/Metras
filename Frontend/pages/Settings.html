@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>METRAS | Settings</title>
+
+  <link rel="stylesheet" href="../css/styles.css" />
+  <script src="../js/teamleader.js" defer></script>
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+
+    <div class="brand">
+      <button class="icon-btn" id="btnMenu" aria-label="Open menu">
+        <span class="hamburger"></span>
+      </button>
+
+      <a href="projects.html" class="logo-link">
+        <img src="../assets/logo.png" alt="METRAS Logo" class="logo-img">
+      </a>
+    </div>
+
+    <nav class="topnav">
+      <a class="navlink" href="index.html" id="navLogout">LOGOUT</a>
+    </nav>
+
+  </header>
+
+  <!-- MAIN -->
+  <main class="container">
+
+    <section class="card settings-card">
+
+      <div class="section-head">
+        <h1 class="title">Settings</h1>
+        <p class="subtitle">
+          Manage your METRAS account settings
+        </p>
+      </div>
+
+      <!-- ACCOUNT INFORMATION -->
+      <div class="settings-group">
+
+        <h2 class="settings-title">Account Information</h2>
+
+        <div class="setting-form">
+
+          <label for="fullName">Name</label>
+          <input
+            type="text"
+            id="fullName"
+            class="setting-input"
+            value="Team Leader"
+          />
+
+         <label for="email">Email</label>
+<input
+  type="email"
+  id="email"
+  class="setting-input readonly-input"
+  value="teamleader@metras.com"
+  readonly
+
+          />
+
+          <label for="role">Role</label>
+          <input
+            type="text"
+            id="role"
+            class="setting-input readonly-input"
+            value="Team Leader"
+            readonly
+          />
+
+        </div>
+
+      </div>
+
+      <!-- NOTIFICATIONS -->
+      <div class="settings-group">
+
+        <h2 class="settings-title">Notifications</h2>
+
+        <div class="setting-item">
+          <span>Email Notifications</span>
+
+          <label class="switch">
+            <input type="checkbox" checked />
+            <span class="slider"></span>
+          </label>
+        </div>
+
+      </div>
+
+      <!-- ACTIONS -->
+      <div class="actions">
+        
+        <button class="btn btn-primary" type="button">
+          Save Changes
+        </button>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- DRAWER -->
+  <aside class="drawer" id="drawer">
+
+    <div class="drawer-head">
+      <div class="drawer-title">Menu</div>
+      <button class="icon-btn" id="btnCloseDrawer">✕</button>
+    </div>
+
+    <div class="drawer-body">
+       <div class="drawer-body">
+      <a href="projects.html" class="drawer-link">Projects</a>
+  
+ <a href="settings.html" class="drawer-link">Settings</a>
+ <a href="index.html" class="drawer-link">Logout</a>
+    </div>
+    </div>
+
+  </aside>
+
+  <div class="backdrop" id="backdrop" hidden></div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="footer-container">
+
+      <div class="footer-left">
+        <div class="footer-logo">METRAS</div>
+        <p class="footer-tagline">
+          AI-powered requirements risk analysis platform
+        </p>
+      </div>
+
+      <div class="footer-right">
+        <p>Built by IT Students</p>
+        <p>© 2026 METRAS</p>
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>

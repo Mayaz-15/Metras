@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>METRAS | Admin Dashboard</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage-compat.js"></script>
+    <script type="module" src="../js/admin.js" defer></script>
+</head>
+<body>
+
+    <header class="topbar">
+        <div class="brand">
+            <button class="icon-btn" id="btnMenu"><span class="hamburger"></span></button>
+            <a href="admin-dashboard.html" class="logo-link">
+                <img src="../assets/logo.png" alt="METRAS Logo" class="logo-img">
+            </a>
+        </div>
+        <nav class="topnav">
+            <a class="navlink active" href="admin-dashboard.html">ADMIN</a>
+            <a class="navlink" href="#" id="navLogout">LOGOUT</a>
+        </nav>
+    </header>
+
+    <section class="subbar">
+        <div class="projects">
+            <button class="pill pill-active">User Management</button>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="card upload-card">
+            <div class="section-head">
+                <h1 class="title">Manage Users</h1>
+                <p class="subtitle">Add, edit, or remove users from the system</p>
+            </div>
+
+            <!-- Add User Form -->
+            <div class="one-bar">
+                <div class="bar-section">
+                    <div class="pane-head">
+                        <h2 class="pane-title">Add New User</h2>
+                        <p class="pane-sub">User will receive an email to set their password</p>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="field">
+                            <label class="label" for="userName">Full Name</label>
+                            <input type="text" id="userName" class="input" placeholder="e.g., Ahmed Al-Riyadh">
+                        </div>
+                        <div class="field">
+                            <label class="label" for="userEmail">Email Address</label>
+                            <input type="email" id="userEmail" class="input" placeholder="name@company.com">
+                        </div>
+                        <div class="field">
+                            <label class="label" for="userRole">Role</label>
+                            <select id="userRole" class="input">
+                                <option value="project_manager">Project Manager</option>
+                                <option value="leader">Team Leader</option>
+                                <option value="team_member">Team Member</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label class="label" for="userCompany">Company</label>
+                            <input type="text" id="userCompany" class="input" placeholder="e.g., Riyadh Bank">
+                        </div>
+                        <div class="actions">
+                            <button class="btn btn-primary" id="btnAddUser">Add User</button>
+                        </div>
+                        <div id="addUserMessage" class="success-message" hidden></div>
+                        <div id="addUserError" class="error-message" hidden></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Users List -->
+            <div class="section-head" style="margin-top:24px;">
+                <h2 class="title">Registered Users</h2>
+                <p class="subtitle" id="userCount">Loading users...</p>
+            </div>
+
+            <div class="table-wrap">
+                <table class="table-dark">
+                    <thead>
+                        <tr><th>Name</th><th>Email</th><th>Role</th><th>Company</th><th>Status</th><th>Actions</th></tr>
+                    </thead>
+                    <tbody id="usersTableBody">
+                        <tr><td colspan="6" style="text-align:center;">Loading users...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- DRAWER -->
+    <aside class="drawer" id="drawer">
+        <div class="drawer-head">
+            <div class="drawer-title">Menu</div>
+            <button class="icon-btn" id="btnCloseDrawer">✕</button>
+        </div>
+        <div class="drawer-body">
+            <a href="admin-dashboard.html" class="drawer-link active">User Management</a>
+            <a href="settings.html" class="drawer-link">Settings</a>
+            <button class="drawer-logout" id="drawerLogout">Logout</button>
+        </div>
+    </aside>
+
+    <div class="backdrop" id="backdrop" hidden></div>
+
+    <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <div class="footer-logo">METRAS</div>
+      <p class="footer-tagline">AI-powered requirements risk analysis platform</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="projects.html">Projects</a>
+      <a href="team-manager.html">Risk Assessment</a>
+      <a href="chatbot.html">Chatbot</a>
+    </div>
+
+    <div class="footer-right">
+      <p>Built by IT Students</p>
+      <p>© 2026 METRAS</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

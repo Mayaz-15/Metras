@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>METRAS | AI-Powered Security Requirements Analysis</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="../js/firebase-config.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/home.js" defer></script>
+</head>
+<body>
+
+    <header class="topbar">
+        <div class="brand">
+           
+            <a href="index.html" class="logo-link">
+                <img src="../assets/logo.png" alt="METRAS Logo" class="logo-img">
+            </a>
+        </div>
+        <nav class="topnav">
+            <a class="navlink active" href="index.html">HOME</a>
+            <a class="navlink" href="login.html">LOGIN</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Secure Your Software <span class="gradient-text">From the First Requirement</span></h1>
+            <p class="hero-subtitle">
+                METRAS is an AI-powered platform that automatically detects security vulnerabilities in software requirements,
+                maps them to CVE standards, and streamlines team collaboration to fix risks before development begins.
+            </p>
+            <div class="hero-buttons">
+                <a href="login.html" class="btn btn-primary btn-large">Get Started →</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat"><span class="stat-number">70%</span><span class="stat-label">Fewer Late-Stage Vulnerabilities</span></div>
+                <div class="stat"><span class="stat-number">3x</span><span class="stat-label">Faster Risk Assessment</span></div>
+                <div class="stat"><span class="stat-number">100%</span><span class="stat-label">SAMA CSF Aligned</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose METRAS?</h2>
+            <p class="section-subtitle">Built for Saudi banks and enterprises requiring SAMA compliance</p>
+            <div class="features-grid">
+                <div class="feature-card"><h3>AI Vulnerability Detection</h3><p>Automatically analyze requirements text to identify security weaknesses.</p></div>
+                <div class="feature-card"><h3>CVE Mapping</h3><p>Each vulnerability is mapped to CVE standards.</p></div>
+                <div class="feature-card"><h3>Task Management</h3><p>Create, assign, and track tasks to remediate vulnerabilities.</p></div>
+                <div class="feature-card"><h3>AI Chatbot Assistant</h3><p>Ask questions about CVE vulnerabilities and mitigations.</p></div>
+                <div class="feature-card"><h3>Analytics Dashboard</h3><p>Visualize risk trends, severity distribution, and team progress.</p></div>
+                <div class="feature-card"><h3>Version Comparison</h3><p>Compare requirement versions to see resolved vs. remaining vulnerabilities.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How METRAS Works</h2>
+            <div class="steps">
+                <div class="step"><div class="step-number">1</div><h3>Upload Requirements</h3><p>Project Manager uploads requirements document</p></div>
+                <div class="step-arrow">→</div>
+                <div class="step"><div class="step-number">2</div><h3>AI Analysis</h3><p>METRAS analyzes text and detects vulnerabilities</p></div>
+                <div class="step-arrow">→</div>
+                <div class="step"><div class="step-number">3</div><h3>Create Tasks</h3><p>Leader creates and assigns tasks to team members</p></div>
+                <div class="step-arrow">→</div>
+                <div class="step"><div class="step-number">4</div><h3>Review & Approve</h3><p>Leader reviews submissions, approves changes</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial">
+        <div class="container">
+            <div class="testimonial-card">
+                <p class="testimonial-quote">"METRAS transformed how we handle security requirements. We caught critical vulnerabilities early and saved months of rework."</p>
+                <p class="testimonial-author">— IT Security Director, Riyadh Bank</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Secure Your Requirements?</h2>
+            <p>Join leading Saudi banks using METRAS for proactive security risk assessment</p>
+            <a href="login.html" class="btn btn-primary btn-large">Login to Your Account →</a>
+        </div>
+    </section>
+
+    <!-- DRAWER -->
+    <aside class="drawer" id="drawer">
+        <div class="drawer-head"><div class="drawer-title">Menu</div><button class="icon-btn" id="btnCloseDrawer">✕</button></div>
+        <div class="drawer-body">
+            <a href="index.html" class="drawer-link">Home</a>
+            <a href="login.html" class="drawer-link">Login</a>
+        </div>
+    </aside>
+    <div class="backdrop" id="backdrop" hidden></div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left"><div class="footer-logo">METRAS</div><p class="footer-tagline">AI-powered requirements risk analysis platform</p></div>
+            <div class="footer-links"><a href="index.html">Home</a><a href="login.html">Login</a></div>
+            <div class="footer-right"><p>© 2026 METRAS | Built for SAMA Compliance</p></div>
+        </div>
+    </footer>
+
+</body>
+</html>

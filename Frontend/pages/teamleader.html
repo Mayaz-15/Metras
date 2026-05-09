@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>METRAS | Risk Assessment</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <script src="../js/teamleader.js" defer></script>
+</head>
+
+<body>
+
+  <!-- =========================
+       TOP BAR
+       ========================= -->
+  <header class="topbar">
+
+    <div class="brand">
+      <!-- Hamburger -->
+      <button class="icon-btn" id="btnMenu" aria-label="Open menu">
+        <span class="hamburger"></span>
+      </button>
+
+      <!-- Logo -->
+      <a href="projects.html" class="logo-link">
+        <img src="../assets/logo.png" alt="METRAS Logo" class="logo-img">
+      </a>
+    </div>
+
+    <nav class="topnav">
+    <a class="navlink" href="index.html" id="navLogout">LOGOUT</a>
+    </nav>
+
+  </header>
+
+  <!-- =========================
+       SUB BAR (PROJECT)
+       ========================= -->
+  <section class="subbar">
+
+    <div class="projects" role="tablist" aria-label="Projects">
+
+     <button 
+  class="pill pill-active" 
+  id="currentProjectTab"
+  role="tab"
+  aria-selected="true"
+>
+  Current Project
+</button>
+
+      <button
+        class="pill pill-add"
+        onclick="window.location.href='createProject.html'"
+        aria-label="Add project"
+      >
+        +
+      </button>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       MAIN
+       ========================= -->
+  <main class="container">
+
+    <section class="card upload-card" id="inputSection">
+
+      <div class="section-head">
+        <h1 class="title">Risk Assessment</h1>
+        <p class="subtitle">
+          Upload your requirements or paste text to start analysis
+        </p>
+      </div>
+
+      <!-- =========================
+           INPUT AREA
+           ========================= -->
+      <div class="one-bar">
+
+        <!-- Upload -->
+        <div class="bar-section">
+
+          <div class="pane-head">
+            <h2 class="pane-title">Upload Document</h2>
+            <p class="pane-sub">PDF or TXT files only</p>
+          </div>
+
+          <label class="dropzone" for="reqFile" id="dropzone">
+
+            <div class="drop-icon">⬆</div>
+
+            <div class="drop-text">
+              <div class="drop-title">Upload your requirements file</div>
+              <div class="drop-hint" id="fileHint">
+                Drag & drop or click to select
+              </div>
+            </div>
+
+            <input id="reqFile" type="file" accept=".pdf,.txt" hidden />
+
+          </label>
+
+          <div class="meta-row">
+            <div class="meta" id="fileMeta">No file selected</div>
+            <button class="link-btn" id="btnClearFile">Clear</button>
+          </div>
+
+          <div class="error-message" id="fileError" hidden></div>
+
+        </div>
+
+        <div class="bar-divider"></div>
+
+        <!-- Text -->
+        <div class="bar-section">
+
+          <div class="pane-head">
+            <h2 class="pane-title">Or Paste Requirements</h2>
+            <p class="pane-sub">Quick testing or small specs</p>
+          </div>
+
+          <textarea
+            id="reqText"
+            class="textarea"
+            placeholder="Paste your requirements here..."
+            rows="8"
+          ></textarea>
+
+          <div class="meta-row">
+            <div class="meta" id="textMeta">0 characters</div>
+            <button class="link-btn" id="btnClearText">Clear</button>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- =========================
+           ACTIONS
+           ========================= -->
+      <div class="actions">
+        <button class="btn btn-secondary" id="btnUseSample">
+          Use Sample
+        </button>
+
+        <button class="btn btn-primary" id="btnAnalyze">
+          Start Analysis
+        </button>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- =========================
+       DRAWER
+       ========================= -->
+  <aside class="drawer" id="drawer">
+
+    <div class="drawer-head">
+      <div class="drawer-title">Menu</div>
+      <button class="icon-btn" id="btnCloseDrawer">✕</button>
+    </div>
+
+    <div class="drawer-body">
+      <a href="projects.html" class="drawer-link">Projects</a>
+  
+ <a href="settings.html" class="drawer-link">Settings</a>
+ <a href="index.html" class="drawer-link">Logout</a>
+    </div>
+
+  </aside>
+
+  <div class="backdrop" id="backdrop" hidden></div>
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <div class="footer-logo">METRAS</div>
+      <p class="footer-tagline">AI-powered requirements risk analysis platform</p>
+    </div>
+
+
+
+    <div class="footer-right">
+      <p>Built by IT Students</p>
+      <p>© 2026 METRAS</p>
+    </div>
+  </div>
+</footer>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const currentProjectTab = document.getElementById("currentProjectTab");
+    const currentProject = JSON.parse(localStorage.getItem("metras_current_project"));
+
+    if (currentProject && currentProjectTab) {
+      currentProjectTab.textContent = currentProject.name;
+    }
+  });
+</script>
+</body>
+</html>
