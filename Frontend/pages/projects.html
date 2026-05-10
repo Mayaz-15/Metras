@@ -3,124 +3,68 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>METRAS | Projects</title>
-
     <link rel="stylesheet" href="../css/styles.css">
-
-    <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage-compat.js"></script>
-
-    <!-- JS -->
-    <script src="../js/firebase-config.js"></script>
-    <script src="../js/firestore-service.js"></script>
-    <script src="../js/auth.js"></script>
-    <script src="../js/teamleader.js" defer></script>
-    <script src="../js/projects.js" defer></script>
+    <script type="module" src="../js/projects.js" defer></script>
 </head>
-
 <body>
 
-    <!-- TOP BAR -->
     <header class="topbar">
-
         <div class="brand">
-
             <button class="icon-btn" id="btnMenu" aria-label="Open menu">
                 <span class="hamburger"></span>
             </button>
-
             <a href="projects.html" class="logo-link">
                 <img src="../assets/logo.png" alt="METRAS Logo" class="logo-img">
             </a>
-
         </div>
-
         <nav class="topnav">
-            <a class="navlink" href="index.html" id="navLogout">
-                LOGOUT
-            </a>
+       <a class="navlink" href="index.html" id="navLogout">LOGOUT</a>
         </nav>
-
     </header>
 
-    <!-- SUBBAR -->
     <section class="subbar">
-
         <div class="projects">
-            <button class="pill pill-active">
-                My Projects
-            </button>
+            <button class="pill pill-active">My Projects</button>
         </div>
-
     </section>
 
-    <!-- MAIN -->
     <main class="container">
-
         <div class="projects-header">
-
             <h1 class="title">My Projects</h1>
-
-       <button class="btn btn-primary" id="btnCreateProject" type="button">
-  + New Project
-</button>
-
+            <button class="btn btn-primary" id="btnCreateProject" type="button">+ New Project</button>
         </div>
 
         <div class="projects-grid" id="projectsGrid">
-           
+            <div class="empty-state">Loading projects...</div>
         </div>
-
     </main>
 
-    <!-- DRAWER -->
     <aside class="drawer" id="drawer">
-
         <div class="drawer-head">
-
             <div class="drawer-title">Menu</div>
-
-            <button class="icon-btn" id="btnCloseDrawer">
-                ✕
-            </button>
-
+            <button class="icon-btn" id="btnCloseDrawer">✕</button>
         </div>
-
-         <div class="drawer-body">
-      <a href="projects.html" class="drawer-link">Projects</a>
-  
- <a href="settings.html" class="drawer-link">Settings</a>
- <a href="index.html" class="drawer-link">Logout</a>
-    </div>
-
+        <div class="drawer-body">
+            <a href="projects.html" class="drawer-link active">Projects</a>
+            <a href="settings.html" class="drawer-link">Settings</a>
+            <a href="index.html" class="drawer-link">Logout</a>
+        </div>
     </aside>
 
     <div class="backdrop" id="backdrop" hidden></div>
 
-    <!-- FOOTER -->
     <footer class="footer">
-
         <div class="footer-container">
-
             <div class="footer-left">
                 <div class="footer-logo">METRAS</div>
-
-                <p class="footer-tagline">
-                    AI-powered requirements risk analysis platform
-                </p>
+                <p class="footer-tagline">AI-powered requirements risk analysis platform</p>
             </div>
-
             <div class="footer-right">
                 <p>Built by IT Students</p>
                 <p>© 2026 METRAS</p>
             </div>
-
         </div>
-
     </footer>
 
 </body>

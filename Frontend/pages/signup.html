@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>METRAS | Login</title>
+    <title>METRAS | Sign Up</title>
     <link rel="stylesheet" href="../css/styles.css">
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage-compat.js"></script>
-    <script type="module" src="../js/login.js" defer></script>
+    <script type="module" src="../js/signup.js" defer></script>
 </head>
 <body class="login-body">
 
@@ -21,19 +20,19 @@
         </div>
         <nav class="topnav">
             <a class="navlink" href="index.html">HOME</a>
-            <a class="navlink active" href="login.html">LOGIN</a>
-            <a class="navlink" href="signup.html">SIGN UP</a>
+            <a class="navlink" href="login.html">LOGIN</a>
+            <a class="navlink active" href="signup.html">SIGN UP</a>
         </nav>
     </header>
 
     <main class="login-main">
         <div class="login-card">
             <div class="login-header">
-                <h1>Welcome Back</h1>
-                <p>Sign in to your METRAS account</p>
+                <h1>Create Account</h1>
+                <p>Your email must be registered by the admin first</p>
             </div>
 
-            <form id="loginForm" class="login-form">
+            <form id="signupForm" class="login-form">
                 <div class="field">
                     <label class="label" for="email">Email Address</label>
                     <input type="email" id="email" class="input" placeholder="name@company.com" required>
@@ -41,24 +40,29 @@
 
                 <div class="field">
                     <label class="label" for="password">Password</label>
-                    <input type="password" id="password" class="input" placeholder="Enter your password" required>
+                    <input type="password" id="password" class="input" placeholder="At least 6 characters" required>
                 </div>
 
-                <div id="loginError" class="error-message" hidden></div>
+                <div class="field">
+                    <label class="label" for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" class="input" placeholder="Repeat your password" required>
+                </div>
 
-                <button type="submit" class="btn btn-primary btn-full" id="loginBtn">
-                    Sign In
+                <div id="signupError" class="error-message" hidden></div>
+                <div id="signupSuccess" class="success-message" hidden></div>
+
+                <button type="submit" class="btn btn-primary btn-full" id="signupBtn">
+                    Create Account
                 </button>
 
-                <div class="login-loading" id="loginLoading" style="display:none;">
+                <div class="login-loading" id="signupLoading" style="display:none;">
                     <div class="spinner"></div>
-                    <span>Authenticating...</span>
+                    <span>Creating account...</span>
                 </div>
             </form>
 
             <div class="login-footer">
-                <p>New user? <a href="signup.html" style="color:var(--primary-2);font-weight:800;">Create your account →</a></p>
-                <p style="margin-top:8px;font-size:12px;color:var(--muted);">Your email must be registered by the admin first.</p>
+                <p>Already have an account? <a href="login.html" style="color:var(--primary-2);font-weight:800;">Sign in →</a></p>
             </div>
         </div>
     </main>
@@ -71,7 +75,6 @@
             <div class="footer-links">
                 <a href="index.html">Home</a>
                 <a href="login.html">Login</a>
-                <a href="signup.html">Sign Up</a>
             </div>
             <div class="footer-right">
                 <p>© 2026 METRAS</p>

@@ -36,7 +36,7 @@
         <section class="card upload-card">
             <div class="section-head">
                 <h1 class="title">Manage Users</h1>
-                <p class="subtitle">Add, edit, or remove users from the system</p>
+                <p class="subtitle">Add users so they can sign up and access METRAS</p>
             </div>
 
             <!-- Add User Form -->
@@ -44,7 +44,7 @@
                 <div class="bar-section">
                     <div class="pane-head">
                         <h2 class="pane-title">Add New User</h2>
-                        <p class="pane-sub">User will receive an email to set their password</p>
+                        <p class="pane-sub">After adding, the user can sign up using this email</p>
                     </div>
 
                     <div class="form-grid">
@@ -59,7 +59,6 @@
                         <div class="field">
                             <label class="label" for="userRole">Role</label>
                             <select id="userRole" class="input">
-                                <option value="project_manager">Project Manager</option>
                                 <option value="leader">Team Leader</option>
                                 <option value="team_member">Team Member</option>
                             </select>
@@ -104,7 +103,6 @@
         </div>
         <div class="drawer-body">
             <a href="admin-dashboard.html" class="drawer-link active">User Management</a>
-            <a href="settings.html" class="drawer-link">Settings</a>
             <button class="drawer-logout" id="drawerLogout">Logout</button>
         </div>
     </aside>
@@ -112,24 +110,17 @@
     <div class="backdrop" id="backdrop" hidden></div>
 
     <footer class="footer">
-  <div class="footer-container">
-    <div class="footer-left">
-      <div class="footer-logo">METRAS</div>
-      <p class="footer-tagline">AI-powered requirements risk analysis platform</p>
-    </div>
-
-    <div class="footer-links">
-      <a href="projects.html">Projects</a>
-      <a href="team-manager.html">Risk Assessment</a>
-      <a href="chatbot.html">Chatbot</a>
-    </div>
-
-    <div class="footer-right">
-      <p>Built by IT Students</p>
-      <p>© 2026 METRAS</p>
-    </div>
-  </div>
-</footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="footer-logo">METRAS</div>
+                <p class="footer-tagline">AI-powered requirements risk analysis platform</p>
+            </div>
+            <div class="footer-right">
+                <p>Built by IT Students</p>
+                <p>© 2026 METRAS</p>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>

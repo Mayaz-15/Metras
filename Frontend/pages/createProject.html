@@ -3,11 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>METRAS | Create Project</title>
-
   <link rel="stylesheet" href="../css/styles.css" />
-  <script src="../js/createProject.js" defer></script>
+  <script type="module" src="../js/createProject.js" defer></script>
 </head>
 
 <body>
@@ -17,84 +15,57 @@
       <button class="icon-btn" id="btnMenu" aria-label="Open menu">
         <span class="hamburger"></span>
       </button>
-
       <a href="projects.html" class="logo-link">
         <img src="../assets/logo.png" alt="METRAS Logo" class="logo-img">
       </a>
     </div>
-
     <nav class="topnav">
-      <a class="navlink" href="index.html" id="navLogout">LOGOUT</a>
+       <a class="navlink" href="index.html" id="navLogout">LOGOUT</a>
     </nav>
   </header>
 
   <section class="subbar">
     <div class="projects" role="tablist" aria-label="Projects">
-      <button class="pill pill-active" type="button">
-        New Project
-      </button>
+      <button class="pill pill-active" type="button">New Project</button>
     </div>
   </section>
 
   <main class="container">
-
     <section class="card upload-card create-card">
 
       <div class="section-head">
         <h1 class="title">Create Project</h1>
-        <p class="subtitle">
-          Set up your project before starting the risk assessment.
-        </p>
+        <p class="subtitle">Set up your project before starting the risk assessment.</p>
       </div>
 
       <div class="form-grid">
 
         <div class="field">
           <label class="label" for="projectName">Project Name</label>
-          <input
-            class="input"
-            id="projectName"
-            type="text"
-            placeholder="e.g. E-commerce Platform"
-            autocomplete="off"
-          >
+          <input class="input" id="projectName" type="text"
+            placeholder="e.g. E-commerce Platform" autocomplete="off">
           <span class="hint">This name will appear in the project tab.</span>
         </div>
 
         <div class="field">
           <label class="label" for="projectDesc">Description</label>
-          <textarea
-            class="textarea textarea-lg"
-            id="projectDesc"
-            rows="4"
-            placeholder="Briefly describe the system, users, and purpose..."
-          ></textarea>
+          <textarea class="textarea textarea-lg" id="projectDesc" rows="4"
+            placeholder="Briefly describe the system, users, and purpose..."></textarea>
           <span class="hint">Keep it short and clear.</span>
         </div>
 
-      <div class="field">
-  <label class="label" for="memberName">Team Members</label>
-
-  <div class="member-input-row">
-    <input
-      class="input"
-      id="memberName"
-      type="text"
-      placeholder="Enter member name"
-      autocomplete="off"
-    >
-
-    <button class="btn btn-secondary" id="btnAddMember" type="button">
-      Add
-    </button>
-  </div>
-
-  <div class="members-list" id="membersList"></div>
-
-  <span class="hint">
-    Add each team member separately.
-  </span>
-</div>
+        <!-- Team Members Dropdown -->
+        <div class="field">
+          <label class="label" for="memberSelect">Add Team Members</label>
+          <div class="member-input-row">
+            <select class="input" id="memberSelect">
+              <option value="">Loading members...</option>
+            </select>
+            <button class="btn btn-secondary" id="btnAddMember" type="button">Add</button>
+          </div>
+          <div class="members-list" id="membersList"></div>
+          <span class="hint">Select registered team members to add to this project.</span>
+        </div>
 
       </div>
 
@@ -107,17 +78,13 @@
       </div>
 
     </section>
-
   </main>
 
   <aside class="drawer" id="drawer" aria-hidden="true">
     <div class="drawer-head">
       <div class="drawer-title">Menu</div>
-      <button class="icon-btn" id="btnCloseDrawer" aria-label="Close menu">
-        ✕
-      </button>
+      <button class="icon-btn" id="btnCloseDrawer" aria-label="Close menu">✕</button>
     </div>
-
     <div class="drawer-body">
       <a href="projects.html" class="drawer-link">Projects</a>
       <a href="settings.html" class="drawer-link">Settings</a>
@@ -133,7 +100,6 @@
         <div class="footer-logo">METRAS</div>
         <p class="footer-tagline">AI-powered requirements risk analysis platform</p>
       </div>
-
       <div class="footer-right">
         <p>Built by IT Students</p>
         <p>© 2026 METRAS</p>
